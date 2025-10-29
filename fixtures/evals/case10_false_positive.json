@@ -1,0 +1,7 @@
+{
+  "name": "false_positive",
+  "alertId": "alert_2",
+  "expected": {
+    "action": "mark_false_positive"
+  }
+}

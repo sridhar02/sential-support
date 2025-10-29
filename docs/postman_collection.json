@@ -1,0 +1,86 @@
+{
+  "info": {
+    "name": "Sentinel Support API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Health",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/health",
+          "host": ["{{baseUrl}}"],
+          "path": ["health"]
+        }
+      }
+    },
+    {
+      "name": "List Alerts",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/alerts",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "alerts"]
+        }
+      }
+    },
+    {
+      "name": "Start Triage",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-api-key",
+            "value": "agent-key"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"alertId\": \"alert_1\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/triage",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "triage"]
+        }
+      }
+    },
+    {
+      "name": "Freeze Card",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-api-key",
+            "value": "agent-key"
+          },
+          {
+            "key": "Idempotency-Key",
+            "value": "freeze-demo"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"cardId\": \"card_1\",\n  \"otp\": \"123456\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/action/freeze-card",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "action", "freeze-card"]
+        }
+      }
+    }
+  ]
+}

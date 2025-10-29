@@ -1,0 +1,29 @@
+[
+  {
+    "id": "alert_1",
+    "customerId": "cust_1",
+    "suspectTxnId": "txn_1001",
+    "cardId": "card_1",
+    "createdAt": "2024-07-15T08:00:00.000Z",
+    "risk": "HIGH",
+    "status": "NEW"
+  },
+  {
+    "id": "alert_2",
+    "customerId": "cust_2",
+    "suspectTxnId": "txn_2001",
+    "cardId": "card_2",
+    "createdAt": "2024-07-14T07:30:00.000Z",
+    "risk": "MEDIUM",
+    "status": "OPEN"
+  },
+  {
+    "id": "alert_3",
+    "customerId": "cust_3",
+    "suspectTxnId": "txn_3001",
+    "cardId": "card_3",
+    "createdAt": "2024-07-13T04:20:00.000Z",
+    "risk": "LOW",
+    "status": "NEW"
+  }
+]

@@ -1,0 +1,7 @@
+{
+  "name": "rate_limit",
+  "alertId": "alert_2",
+  "expected": {
+    "status": 429
+  }
+}

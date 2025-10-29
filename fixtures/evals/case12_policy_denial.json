@@ -1,0 +1,7 @@
+{
+  "name": "policy_denial",
+  "alertId": "alert_1",
+  "expected": {
+    "policy": "otp_required"
+  }
+}

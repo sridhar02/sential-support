@@ -1,0 +1,20 @@
+[
+  {
+    "id": "kb_otp",
+    "title": "OTP Verification Policy",
+    "anchor": "otp",
+    "content": "Agents must verify OTP 123456 before freezing cards when risk is high."
+  },
+  {
+    "id": "kb_dispute",
+    "title": "Dispute Reason Codes",
+    "anchor": "dispute-10.4",
+    "content": "Use reason code 10.4 for unrecognized ecommerce charges. Provide customer follow up message."
+  },
+  {
+    "id": "kb_travel",
+    "title": "Travel Window Guidance",
+    "anchor": "travel-window",
+    "content": "If customer travel noted in profile, downgrade risk to medium unless velocity exceeds threshold."
+  }
+]

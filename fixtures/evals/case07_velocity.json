@@ -1,0 +1,7 @@
+{
+  "name": "velocity_spike",
+  "alertId": "alert_1",
+  "expected": {
+    "risk": "high"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "travel_window",
+  "alertId": "alert_3",
+  "expected": {
+    "risk": "low"
+  }
+}

@@ -1,0 +1,14 @@
+[
+  {
+    "id": "cb_1",
+    "customerId": "cust_1",
+    "txnId": "txn_1001",
+    "createdAt": "2023-11-10T00:00:00.000Z"
+  },
+  {
+    "id": "cb_2",
+    "customerId": "cust_3",
+    "txnId": "txn_2001",
+    "createdAt": "2023-12-01T00:00:00.000Z"
+  }
+]

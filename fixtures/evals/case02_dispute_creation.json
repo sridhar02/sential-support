@@ -1,0 +1,8 @@
+{
+  "name": "dispute_creation",
+  "alertId": "alert_2",
+  "expected": {
+    "action": "open_dispute",
+    "reasonCode": "10.4"
+  }
+}

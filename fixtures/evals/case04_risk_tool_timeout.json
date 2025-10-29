@@ -1,0 +1,10 @@
+{
+  "name": "risk_tool_timeout",
+  "alertId": "alert_1",
+  "simulate": {
+    "riskSignals": "timeout"
+  },
+  "expected": {
+    "fallback": true
+  }
+}

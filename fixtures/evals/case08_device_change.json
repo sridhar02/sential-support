@@ -1,0 +1,7 @@
+{
+  "name": "device_change",
+  "alertId": "alert_2",
+  "expected": {
+    "risk": "medium"
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "name": "duplicate_pending",
+  "alertId": "alert_3",
+  "expected": {
+    "action": "contact_customer"
+  }
+}

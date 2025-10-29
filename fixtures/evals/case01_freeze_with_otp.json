@@ -1,0 +1,8 @@
+{
+  "name": "freeze_with_otp",
+  "alertId": "alert_1",
+  "expected": {
+    "action": "freeze_card",
+    "otpRequired": true
+  }
+}

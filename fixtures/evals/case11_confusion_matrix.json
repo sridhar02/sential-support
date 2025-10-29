@@ -1,0 +1,8 @@
+{
+  "name": "confusion_matrix",
+  "alertId": "alert_1",
+  "expected": {
+    "risk": "high",
+    "bucket": "tp"
+  }
+}

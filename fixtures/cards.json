@@ -1,0 +1,42 @@
+[
+  {
+    "id": "card_1",
+    "customerId": "cust_1",
+    "last4": "1122",
+    "network": "VISA",
+    "status": "ACTIVE",
+    "createdAt": "2024-01-10T00:00:00.000Z"
+  },
+  {
+    "id": "card_2",
+    "customerId": "cust_2",
+    "last4": "2211",
+    "network": "MASTERCARD",
+    "status": "ACTIVE",
+    "createdAt": "2024-02-14T00:00:00.000Z"
+  },
+  {
+    "id": "card_3",
+    "customerId": "cust_3",
+    "last4": "3344",
+    "network": "VISA",
+    "status": "ACTIVE",
+    "createdAt": "2024-03-21T00:00:00.000Z"
+  },
+  {
+    "id": "card_4",
+    "customerId": "cust_4",
+    "last4": "5566",
+    "network": "VISA",
+    "status": "ACTIVE",
+    "createdAt": "2024-04-02T00:00:00.000Z"
+  },
+  {
+    "id": "card_5",
+    "customerId": "cust_5",
+    "last4": "7788",
+    "network": "MASTERCARD",
+    "status": "ACTIVE",
+    "createdAt": "2024-04-22T00:00:00.000Z"
+  }
+]

@@ -1,0 +1,32 @@
+[
+  {
+    "id": "acct_1",
+    "customerId": "cust_1",
+    "balanceCents": 505000,
+    "currency": "USD"
+  },
+  {
+    "id": "acct_2",
+    "customerId": "cust_2",
+    "balanceCents": 780000,
+    "currency": "USD"
+  },
+  {
+    "id": "acct_3",
+    "customerId": "cust_3",
+    "balanceCents": 123000,
+    "currency": "USD"
+  },
+  {
+    "id": "acct_4",
+    "customerId": "cust_4",
+    "balanceCents": 250000,
+    "currency": "USD"
+  },
+  {
+    "id": "acct_5",
+    "customerId": "cust_5",
+    "balanceCents": 345000,
+    "currency": "USD"
+  }
+]

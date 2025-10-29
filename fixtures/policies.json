@@ -1,0 +1,14 @@
+[
+  {
+    "id": "policy_otp",
+    "code": "OTP_REQUIRED",
+    "title": "OTP Required for Freeze",
+    "content": "Freeze card actions require OTP verification unless approved by lead."
+  },
+  {
+    "id": "policy_dispute",
+    "code": "DISPUTE_ESCALATION",
+    "title": "Dispute Escalation",
+    "content": "Ensure reason code matches scenario and inform customer of timeline."
+  }
+]
