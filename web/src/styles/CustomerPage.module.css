@@ -1,0 +1,68 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.insights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  background: #ffffff;
+  padding: 16px 20px;
+  border-radius: 12px;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.05);
+}
+
+.insights h4 {
+  margin: 0 0 12px;
+}
+
+.insights ul {
+  margin: 0;
+  padding-left: 18px;
+  color: #475569;
+}
+
+.timeline {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.05);
+  overflow: hidden;
+  position: relative;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 20px;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.row:last-child {
+  border-bottom: none;
+}
+
+.merchant {
+  margin: 0;
+  font-weight: 600;
+}
+
+.meta {
+  margin: 4px 0 0;
+  color: #64748b;
+  font-size: 0.85rem;
+}
+
+.amount {
+  font-weight: 600;
+  color: #0f172a;
+}
+
+.loadMore {
+  width: 100%;
+  border: none;
+  padding: 12px;
+  background: #1e40af;
+  color: #f8fafc;
+}

@@ -1,0 +1,42 @@
+.app {
+  display: flex;
+  min-height: 100vh;
+  background: #f5f7fb;
+  color: #1f2933;
+}
+
+.sidebar {
+  width: 220px;
+  background: #0f172a;
+  color: #f8fafc;
+  padding: 24px;
+}
+
+.brand {
+  font-size: 1.2rem;
+  margin-bottom: 24px;
+}
+
+.link {
+  display: block;
+  padding: 12px 8px;
+  color: #cbd5f5;
+  border-radius: 6px;
+  text-decoration: none;
+}
+
+.activeLink {
+  display: block;
+  padding: 12px 8px;
+  color: #cbd5f5;
+  border-radius: 6px;
+  text-decoration: none;
+  background: #1d4ed8;
+  color: #f8fafc;
+}
+
+.content {
+  flex: 1;
+  padding: 24px 32px;
+  overflow: auto;
+}

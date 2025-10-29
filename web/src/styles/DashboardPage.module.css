@@ -1,0 +1,30 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.05);
+}
+
+.card h3 {
+  margin: 0 0 12px;
+  font-size: 0.95rem;
+  color: #475569;
+}
+
+.card p {
+  font-size: 1.8rem;
+  margin: 0;
+  font-weight: 600;
+}

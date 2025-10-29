@@ -1,0 +1,71 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 18px 24px;
+  box-shadow: 0 10px 20px rgba(15, 23, 42, 0.06);
+}
+
+.badge {
+  background: #1d4ed8;
+  color: #f8fafc;
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.table {
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.05);
+  overflow: hidden;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 24px;
+  border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+}
+
+.row:last-child {
+  border-bottom: none;
+}
+
+.rowTitle {
+  margin: 0;
+  font-weight: 600;
+}
+
+.rowSub {
+  margin: 4px 0 0;
+  color: #64748b;
+  font-size: 0.85rem;
+}
+
+.rowActions {
+  display: flex;
+  gap: 12px;
+}
+
+.rowActions button {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: 1px solid #cbd5f5;
+  background: #fff;
+}
+
+.primaryButton {
+  background: #1e3a8a;
+  color: #f8fafc;
+  border: none !important;
+}
