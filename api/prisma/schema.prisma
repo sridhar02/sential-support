@@ -1,0 +1,171 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Customer {
+  id           String    @id @default(cuid())
+  name         String
+  emailMasked  String
+  kycLevel     String
+  createdAt    DateTime  @default(now())
+  cards        Card[]
+  accounts     Account[]
+  transactions Transaction[]
+  alerts       Alert[]
+  cases        Case[]
+}
+
+model Card {
+  id         String   @id @default(cuid())
+  customer   Customer @relation(fields: [customerId], references: [id])
+  customerId String
+  last4      String
+  network    String
+  status     String
+  createdAt  DateTime @default(now())
+  alerts     Alert[]
+  transactions Transaction[]
+}
+
+model Account {
+  id           String   @id @default(cuid())
+  customer     Customer @relation(fields: [customerId], references: [id])
+  customerId   String
+  balanceCents Int
+  currency     String
+}
+
+model Transaction {
+  id          String   @id
+  customer    Customer @relation(fields: [customerId], references: [id])
+  customerId  String
+  card        Card?    @relation(fields: [cardId], references: [id])
+  cardId      String?
+  mcc         String
+  merchant    String
+  amountCents Int
+  currency    String
+  ts          DateTime
+  deviceId    String?
+  country     String?
+  city        String?
+  alerts      Alert[]
+  case        Case?    @relation("TransactionCase")
+
+  @@index([customerId, ts(sort: Desc)])
+  @@index([merchant])
+  @@index([mcc])
+  @@index([customerId, merchant])
+}
+
+model Alert {
+  id            String       @id @default(cuid())
+  customer      Customer     @relation(fields: [customerId], references: [id])
+  customerId    String
+  suspectTxn    Transaction? @relation(fields: [suspectTxnId], references: [id])
+  suspectTxnId  String?
+  card          Card?        @relation(fields: [cardId], references: [id])
+  cardId        String?
+  createdAt     DateTime     @default(now())
+  risk          String
+  status        String
+  triageRuns    TriageRun[]
+}
+
+model Case {
+  id          String       @id @default(cuid())
+  customer    Customer     @relation(fields: [customerId], references: [id])
+  customerId  String
+  txn         Transaction? @relation("TransactionCase", fields: [txnId], references: [id])
+  txnId       String? @unique
+  type        String
+  status      String
+  reasonCode  String?
+  createdAt   DateTime     @default(now())
+  events      CaseEvent[]
+}
+
+model CaseEvent {
+  id        String   @id @default(cuid())
+  case      Case     @relation(fields: [caseId], references: [id])
+  caseId    String
+  ts        DateTime @default(now())
+  actor     String
+  action    String
+  payload   Json
+}
+
+model TriageRun {
+  id           String       @id @default(cuid())
+  alert        Alert        @relation(fields: [alertId], references: [id])
+  alertId      String
+  startedAt    DateTime     @default(now())
+  endedAt      DateTime?
+  risk         String
+  reasons      Json
+  fallbackUsed Boolean      @default(false)
+  latencyMs    Int?
+  traces       AgentTrace[]
+}
+
+model AgentTrace {
+  run        TriageRun @relation(fields: [runId], references: [id])
+  runId      String
+  seq        Int
+  step       String
+  ok         Boolean
+  durationMs Int
+  detail     Json
+
+  @@id([runId, seq])
+}
+
+model KbDoc {
+  id      String @id @default(cuid())
+  title   String
+  anchor  String
+  content String
+}
+
+model Policy {
+  id      String @id @default(cuid())
+  code    String @unique
+  title   String
+  content String
+}
+
+model Chargeback {
+  id         String  @id @default(cuid())
+  customerId String
+  txnId      String
+  createdAt  DateTime @default(now())
+}
+
+model Device {
+  id         String  @id
+  customerId String
+  lastSeen   DateTime @default(now())
+  location   String?
+}
+
+model IdempotencyKey {
+  key        String   @id
+  endpoint   String
+  response   Json
+  createdAt  DateTime @default(now())
+}
+
+model AuditLog {
+  id         String   @id @default(cuid())
+  actor      String
+  action     String
+  resourceId String?
+  resource   String?
+  payload    Json
+  createdAt  DateTime @default(now())
+}
