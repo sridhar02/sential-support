@@ -17,7 +17,31 @@
       }
     },
     {
-      "name": "List Alerts",
+      "name": "Metrics",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/metrics",
+          "host": ["{{baseUrl}}"],
+          "path": ["metrics"]
+        }
+      }
+    },
+    {
+      "name": "Alerts / KPIs",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/alerts/kpis",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "alerts", "kpis"]
+        }
+      }
+    },
+    {
+      "name": "Alerts / List",
       "request": {
         "method": "GET",
         "header": [],
@@ -25,6 +49,65 @@
           "raw": "{{baseUrl}}/api/alerts",
           "host": ["{{baseUrl}}"],
           "path": ["api", "alerts"]
+        }
+      }
+    },
+    {
+      "name": "Ingest Transactions",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-api-key",
+            "value": "agent-key"
+          },
+          {
+            "key": "Idempotency-Key",
+            "value": "ingest-demo-1"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"transactions\": [\n    {\n      \"id\": \"txn_demo_1\",\n      \"customerId\": \"cust_1\",\n      \"cardId\": \"card_1\",\n      \"mcc\": \"5411\",\n      \"merchant\": \"ABC Mart\",\n      \"amountCents\": -12345,\n      \"currency\": \"USD\",\n      \"ts\": \"2024-07-20T12:00:00.000Z\",\n      \"deviceId\": \"device_demo\",\n      \"country\": \"US\",\n      \"city\": \"San Francisco\"\n    }\n  ]\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/ingest/transactions",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "ingest", "transactions"]
+        }
+      }
+    },
+    {
+      "name": "Customer Transactions",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/customer/{{customerId}}/transactions?limit=50",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "customer", "{{customerId}}", "transactions"],
+          "query": [
+            {
+              "key": "limit",
+              "value": "50"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Insights Summary",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/insights/{{customerId}}/summary",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "insights", "{{customerId}}", "summary"]
         }
       }
     },
@@ -79,6 +162,94 @@
           "raw": "{{baseUrl}}/api/action/freeze-card",
           "host": ["{{baseUrl}}"],
           "path": ["api", "action", "freeze-card"]
+        }
+      }
+    },
+    {
+      "name": "Open Dispute",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-api-key",
+            "value": "agent-key"
+          },
+          {
+            "key": "Idempotency-Key",
+            "value": "dispute-demo"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"txnId\": \"txn_2001\",\n  \"reasonCode\": \"10.4\",\n  \"confirm\": true\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/action/open-dispute",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "action", "open-dispute"]
+        }
+      }
+    },
+    {
+      "name": "Contact Customer",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          },
+          {
+            "key": "x-api-key",
+            "value": "agent-key"
+          },
+          {
+            "key": "Idempotency-Key",
+            "value": "contact-demo"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"customerId\": \"cust_1\",\n  \"note\": \"Reached out via phone\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/api/action/contact-customer",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "action", "contact-customer"]
+        }
+      }
+    },
+    {
+      "name": "Knowledge Base Search",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/kb/search?q=otp",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "kb", "search"],
+          "query": [
+            {
+              "key": "q",
+              "value": "otp"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "name": "Eval Cases",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{baseUrl}}/api/evals",
+          "host": ["{{baseUrl}}"],
+          "path": ["api", "evals"]
         }
       }
     }
